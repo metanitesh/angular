@@ -1,1 +1,11 @@
-<mat-card>Hello</mat-card>
+<mat-card>{{ title }}</mat-card>
+<p [style.color]="themeColor">{{ courses | json }}</p>
+<input style.border="black" [(ngModel)]="themeColor" type="text" />
+<p>Hello</p>
+<div *ngFor="let course of courses" (click)="selectCourse(course)">
+  <li>{{ course.author }} teaches {{ course.name }}</li>
+</div>
+
+<div *ngIf="selectedCourse.title !== 'red'">{{ selectedCourse.title }}</div>
+
+<button (click)="updateColor()">Update</button>
