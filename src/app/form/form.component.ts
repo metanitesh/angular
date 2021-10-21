@@ -24,8 +24,7 @@ export class FormComponent implements OnInit {
     }
   }
 
-  save(e) {
-    e.preventDefault();
+  save() {
     console.log("save", this.selectedCourse)
   }
 
