@@ -1,0 +1,25 @@
+<form #form="ngForm" (submit)="save()">
+  <input
+    type="text"
+    name="title"
+    placeholder="title"
+    [(ngModel)]="selectedCourse.title"
+    required
+  />
+  <br />
+  <input
+    type="text"
+    name="description"
+    [(ngModel)]="selectedCourse.description"
+    placeholder="description"
+    required
+  />
+  <br />
+  <button (click)="reset()">reset</button>
+  <button [disabled]="form.invalid" type="submit">submit</button>
+  <br />
+  <pre>
+    {{ selectedCourse | json }}
+    {{ form.valid }}
+  </pre>
+</form>
