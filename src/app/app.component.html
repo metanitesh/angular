@@ -3,7 +3,7 @@
 <input style.border="black" [(ngModel)]="themeColor" type="text" />
 <p>Hello</p>
 <div *ngFor="let course of courses" (click)="selectCourse(course)">
-  <li>{{ course.author }} teaches {{ course.name }}</li>
+  <li>{{ course.author }} teaches {{ course.title }}</li>
 </div>
 
 <div *ngIf="selectedCourse.title !== 'red'">{{ selectedCourse.title }}</div>
