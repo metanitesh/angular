@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CoursesService } from './shared/services/courses.service'
 
 @Component({
   selector: 'app-root2',
@@ -7,24 +8,22 @@ import { Component } from '@angular/core';
 })
 
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'angular'
   themeColor = 'blue'
   selectedCourse = { title: 'red' }
-  courses = [{
-    id: 1,
-    author: 'Nitesh',
-    title: 'Js'
-  }, {
-    id: 2,
-    author: 'Santu',
-    title: 'Python'
-  }]
+  courses = null
 
+  constructor(private coursesService: CoursesService) {
+
+  }
   updateColor() {
     this.themeColor = "red"
   }
 
+  ngOnInit() {
+    this.courses = this.coursesService.findAll()
+  }
   selectCourse(course) {
     this.selectedCourse = course
   }

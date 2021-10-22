@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../shared/services/courses.service';
 
 @Component({
   selector: 'app-form',
@@ -12,9 +13,10 @@ export class FormComponent implements OnInit {
     description: "Js"
   }
 
-  constructor() { }
+  constructor(private courseService: CoursesService) { }
 
   ngOnInit(): void {
+
   }
 
   reset() {
@@ -25,7 +27,7 @@ export class FormComponent implements OnInit {
   }
 
   save() {
-    console.log("save", this.selectedCourse)
+    this.courseService.create(this.selectedCourse)
   }
 
 }
