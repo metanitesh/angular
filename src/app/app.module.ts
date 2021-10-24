@@ -10,12 +10,16 @@ import { FormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { CoursesService } from './shared/services/courses.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     XyzComponent,
-    FormComponent
+    FormComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
