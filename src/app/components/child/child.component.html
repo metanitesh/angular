@@ -1,4 +1,5 @@
-<p>child works!</p>
+<p>child works! {{ name }}</p>
+
 <div *ngFor="let todo of todos">
-  <li (click)="deleted.emit()">{{ todo }}</li>
+  <li (click)="deleted.emit('hello')">{{ todo }}</li>
 </div>

@@ -5,16 +5,11 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements OnInit {
+export class ChildComponent {
 
   @Input() todos
-  @Output() selected = new EventEmitter
-  @Output() deleted = new EventEmitter
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  @Input() name
+  @Output() selected = new EventEmitter()
+  @Output() deleted = new EventEmitter()
 
 }

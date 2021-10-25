@@ -1,4 +1,9 @@
 <p>
   parent works!
-  <app-child [todos]="todos" (deleted)="deleteCourse($event)"></app-child>
+  <app-child
+    [todos]="todos"
+    (deleted)="deleteCourse()"
+    (selected)="selectCourse()"
+    [name]="name"
+  ></app-child>
 </p>

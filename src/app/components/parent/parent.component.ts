@@ -8,12 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class ParentComponent implements OnInit {
 
   todos = ['wash', 'paint', 'walk']
+  name = 'Nitesh'
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  deleteCourse() {
+  deleteCourse(event) {
     console.log('course deleted')
+  }
+
+  selectCourse(event) {
+    console.log('course selected')
   }
 }
